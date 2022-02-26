@@ -24,6 +24,7 @@ public class RVgodsAdapter extends RecyclerView.Adapter<RVgodsAdapter.ViewHolder
         this.context = context;
         this.fragment = fragment;
         aviliable.add("Hestia");
+        aviliable.add("Zeus");
     }
 
     @NonNull
