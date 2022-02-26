@@ -1,11 +1,14 @@
 package com.project.olympos;
 
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,7 +74,7 @@ public class OthersFragment extends Fragment {
         others = new ArrayList<>();
         recyclerOthers = vista.findViewById(R.id.rvGods);
         recyclerOthers.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        RVadapter adaptador = new RVadapter(others, getContext());
+        RVothersAdapter adaptador = new RVothersAdapter(others, getContext(), this);
         recyclerOthers.setAdapter(adaptador);
 
         fillGodsArray();
@@ -103,5 +106,12 @@ public class OthersFragment extends Fragment {
         others.add(new Being(getResources().getDrawable(R.drawable.pythia_x), "Pítia"));
         others.add(new Being(getResources().getDrawable(R.drawable.urano_x), "Urano"));
 
+    }
+
+    public void openArticle(int position, String name, Drawable image) {
+        Intent intent = new Intent(getActivity(), Article.class);
+        intent.putExtra("name", name);
+        intent.putExtra("image", (Parcelable) image);
+        startActivity(intent);
     }
 }

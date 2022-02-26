@@ -1,7 +1,6 @@
 package com.project.olympos;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,30 +10,38 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.ArrayList;
 
-public class RVadapter extends RecyclerView.Adapter<RVadapter.ViewHolder> {
+public class RVgodsAdapter extends RecyclerView.Adapter<RVgodsAdapter.ViewHolder> {
     private ArrayList<Being> characters;
     private Context context;
+    private GodsFragment fragment;
 
-    public RVadapter(ArrayList<Being> characters, Context context) {
+    public RVgodsAdapter(ArrayList<Being> characters, Context context, GodsFragment fragment) {
         this.characters = characters;
         this.context = context;
+        this.fragment = fragment;
     }
 
     @NonNull
     @Override
-    public RVadapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RVgodsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RVadapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RVgodsAdapter.ViewHolder holder, int position) {
         holder.imageView.setImageDrawable(characters.get(position).getImage());
         holder.textView.setText(characters.get(position).getName());
+
+        //OPEN NOTE RELATED ARTICLE
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragment.openArticle(position);
+            }
+        });
     }
 
     @Override

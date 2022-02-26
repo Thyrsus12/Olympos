@@ -1,10 +1,10 @@
 package com.project.olympos;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -72,7 +72,7 @@ public class GodsFragment extends Fragment {
         gods = new ArrayList<>();
         recyclerGods = vista.findViewById(R.id.rvGods);
         recyclerGods.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        RVadapter adaptador = new RVadapter(gods, getContext());
+        RVgodsAdapter adaptador = new RVgodsAdapter(gods, getContext(), this);
         recyclerGods.setAdapter(adaptador);
 
         fillGodsArray();
@@ -111,5 +111,12 @@ public class GodsFragment extends Fragment {
         gods.add(new Being(getResources().getDrawable(R.drawable.nemesis_x), "Nemesis"));
         gods.add(new Being(getResources().getDrawable(R.drawable.tyche_x), "Tyche"));
 
+    }
+
+    public void openArticle(int position) {
+        Intent intent = new Intent(getActivity(), Article.class);
+        /*intent.putExtra("newNote", false);
+        intent.putExtra("notePos",notePos);*/
+        startActivity(intent);
     }
 }
