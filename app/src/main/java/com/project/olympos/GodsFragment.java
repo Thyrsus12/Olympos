@@ -96,6 +96,20 @@ public class GodsFragment extends Fragment {
         gods.add(new Being(getResources().getDrawable(R.drawable.helios_x), "Helios"));
         gods.add(new Being(getResources().getDrawable(R.drawable.hephaestus_x), "Hefesto"));
         gods.add(new Being(getResources().getDrawable(R.drawable.hermes_x), "Hermes"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.amphitrite_x), "Anfitrite"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.eos_x), "Eos"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.eris_x), "Eris"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.eros_x), "Eros"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.hebe_x), "Hebe"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.iris_x), "Iris"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.persephone_x), "Perséfonoe"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.morpheus_x), "Morfeo"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.nike_x), "Nike"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.khione_x), "Kione"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.melinoe_x), "Melinoe"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.selene_x), "Selene"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.nemesis_x), "Nemesis"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.tyche_x), "Tyche"));
 
     }
 }

@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.project.olympos.GodsFragment;
+import com.project.olympos.OthersFragment;
 import com.project.olympos.R;
 
 /**
@@ -35,7 +36,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return new GodsFragment();
             case 1:
-                return new GodsFragment();
+                return new OthersFragment();
             default:
                 return null;
         }
