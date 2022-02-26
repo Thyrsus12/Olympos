@@ -4,6 +4,7 @@
     <string name="tab_text_1">Dioses</string>
     <string name="tab_text_2">Otros</string>
     <string name="hestia_resume">Hija de Cronos y Rea.\nDiosa olímpica de la hoguera y del hogar (Simbolo: fuego).\nNo solía salir del Olimpo, no le interesaban las movidas de dioses o humanos, por ello se la conoce también como defensora de la paz.\nEncargada de dar armonia en el matrimonio y el hogar</string>
+    <string name="eolo_resume">Eolo Resume</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

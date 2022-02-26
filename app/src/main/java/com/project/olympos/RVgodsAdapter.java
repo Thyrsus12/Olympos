@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,11 +17,13 @@ public class RVgodsAdapter extends RecyclerView.Adapter<RVgodsAdapter.ViewHolder
     private ArrayList<Being> characters;
     private Context context;
     private GodsFragment fragment;
+    ArrayList<String> aviliable = new ArrayList<>();
 
     public RVgodsAdapter(ArrayList<Being> characters, Context context, GodsFragment fragment) {
         this.characters = characters;
         this.context = context;
         this.fragment = fragment;
+        aviliable.add("Hestia");
     }
 
     @NonNull
@@ -32,16 +35,22 @@ public class RVgodsAdapter extends RecyclerView.Adapter<RVgodsAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull RVgodsAdapter.ViewHolder holder, int position) {
+        String name = characters.get(position).getName();
         holder.imageView.setImageDrawable(characters.get(position).getImage());
-        holder.textView.setText(characters.get(position).getName());
+        holder.textView.setText(name);
 
         //OPEN NOTE RELATED ARTICLE
-        holder.imageView.setOnClickListener(new View.OnClickListener() {
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fragment.openArticle(position);
+                if (aviliable.contains(name))
+                    fragment.openArticle(name);
+                else
+                    Toast.makeText(context, "Este personaje aún no está disponible", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     @Override

@@ -18,12 +18,12 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:paddingTop="80dp"
+        android:paddingTop="110dp"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/aeolus_x" />
+        app:srcCompat="@drawable/olympus" />
 
     <LinearLayout
         android:layout_marginTop="10dp"
@@ -35,7 +35,9 @@
             android:id="@+id/tvResume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/hestia_resume"/>
+            android:text="Este personaje aún no tiene contendio"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
 
         <TextView
             android:id="@+id/tvMoreInfo"

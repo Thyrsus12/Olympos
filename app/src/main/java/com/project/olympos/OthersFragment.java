@@ -108,10 +108,9 @@ public class OthersFragment extends Fragment {
 
     }
 
-    public void openArticle(int position, String name, Drawable image) {
+    public void openArticle(String name) {
         Intent intent = new Intent(getActivity(), Article.class);
         intent.putExtra("name", name);
-        intent.putExtra("image", (Parcelable) image);
         startActivity(intent);
     }
 }

@@ -83,7 +83,7 @@ public class GodsFragment extends Fragment {
     private void fillGodsArray() {
         gods.add(new Being(getResources().getDrawable(R.drawable.zeus_x), "Zeus"));
         gods.add(new Being(getResources().getDrawable(R.drawable.hades_x), "Hades"));
-        gods.add(new Being(getResources().getDrawable(R.drawable.poseidon_x), "Poseidon"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.poseidon_x), "Poseidón"));
         gods.add(new Being(getResources().getDrawable(R.drawable.hera_x), "Hera"));
         gods.add(new Being(getResources().getDrawable(R.drawable.hestia_x), "Hestia"));
         gods.add(new Being(getResources().getDrawable(R.drawable.demeter_x), "Demeter"));
@@ -102,7 +102,7 @@ public class GodsFragment extends Fragment {
         gods.add(new Being(getResources().getDrawable(R.drawable.eros_x), "Eros"));
         gods.add(new Being(getResources().getDrawable(R.drawable.hebe_x), "Hebe"));
         gods.add(new Being(getResources().getDrawable(R.drawable.iris_x), "Iris"));
-        gods.add(new Being(getResources().getDrawable(R.drawable.persephone_x), "Perséfonoe"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.persephone_x), "Perséfone"));
         gods.add(new Being(getResources().getDrawable(R.drawable.morpheus_x), "Morfeo"));
         gods.add(new Being(getResources().getDrawable(R.drawable.nike_x), "Nike"));
         gods.add(new Being(getResources().getDrawable(R.drawable.khione_x), "Kione"));
@@ -113,10 +113,9 @@ public class GodsFragment extends Fragment {
 
     }
 
-    public void openArticle(int position) {
+    public void openArticle(String name) {
         Intent intent = new Intent(getActivity(), Article.class);
-        /*intent.putExtra("newNote", false);
-        intent.putExtra("notePos",notePos);*/
+        intent.putExtra("name", name);
         startActivity(intent);
     }
 }

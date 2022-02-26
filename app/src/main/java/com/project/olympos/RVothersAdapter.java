@@ -1,12 +1,12 @@
 package com.project.olympos;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +17,7 @@ public class RVothersAdapter extends RecyclerView.Adapter<RVothersAdapter.ViewHo
     private ArrayList<Being> characters;
     private Context context;
     private OthersFragment fragment;
+    ArrayList<String> aviliable = new ArrayList<>();
 
     public RVothersAdapter (ArrayList<Being> characters, Context context, OthersFragment fragment) {
         this.characters = characters;
@@ -33,23 +34,18 @@ public class RVothersAdapter extends RecyclerView.Adapter<RVothersAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull RVothersAdapter.ViewHolder holder, int position) {
-        Drawable image = characters.get(position).getImage();
         String name = characters.get(position).getName();
-        holder.imageView.setImageDrawable(image);
+        holder.imageView.setImageDrawable(characters.get(position).getImage());
         holder.textView.setText(name);
 
         //OPEN NOTE RELATED ARTICLE
-        holder.imageView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fragment.openArticle(position, name, image);
-            }
-        });
-
-        holder.textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fragment.openArticle(position, name, image);
+                if (aviliable.contains(name))
+                    fragment.openArticle(name);
+                else
+                    Toast.makeText(context, "Este personaje aún no está disponible", Toast.LENGTH_SHORT).show();
             }
         });
     }
