@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import android.transition.AutoTransition;
+import android.transition.Fade;
 import android.transition.TransitionManager;
 import android.view.InflateException;
 import android.view.View;
@@ -27,39 +28,52 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class Article extends AppCompatActivity {
 
+    //Gerneral propierties
+    Context context;
     ImageView imageView;
     TextView tvResume;
-    String name;
-    Context context;
-    View alertView;
 
     //Especific propierties
     Drawable drawable;
     String resume, url, title1, subtitle1, myth1, title2, subtitle2, myth2;
 
-    ////Expandable CardView
+    //Bundle propierties
+    String name;
+
+    //AlertDialog
+    View alertView;
+
+    //Expandable CardView1
     ImageButton arrow;
     LinearLayout hiddenView;
     CardView cardView;
     TextView tvTitle, tvSubtitle, tvMyth;
+    //Expandable CardView2
+    ImageButton arrow2;
+    LinearLayout hiddenView2;
+    CardView cardView2;
+    TextView tvTitle2, tvSubtitle2, tvMyth2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article);
 
+        //Gerneral propierties
         context = this;
         imageView = findViewById(R.id.imageView);
         tvResume = findViewById(R.id.tvResume);
         TextView tvMoreInfo = findViewById(R.id.tvMoreInfo);
+
+        //Especific propierties
         url = "https://es.wikipedia.org/wiki/Zeus";
 
+        //Bundle propierties
         Bundle bundle = getIntent().getExtras();
         name = bundle.getString("name");
 
-
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(Html.fromHtml("<font>"+ name +"</font>"));
+        actionBar.setTitle(Html.fromHtml("<font>" + name + "</font>"));
 
         //AlertDialog that show big image
         alertView = getLayoutInflater().inflate(R.layout.alert_dialog_image, null);
@@ -84,46 +98,63 @@ public class Article extends AppCompatActivity {
             startActivity(intent);
         });
 
-        //Expandable CardView
+        //Expandable CardView1
         cardView = findViewById(R.id.base_cardview);
         arrow = findViewById(R.id.arrow_button);
         hiddenView = findViewById(R.id.hidden_view);
         tvTitle = findViewById(R.id.tvTitle);
         tvSubtitle = findViewById(R.id.tvSubtitle);
         tvMyth = findViewById(R.id.tvMyth);
+        //Expandable CardView2
+        cardView2 = findViewById(R.id.base_cardview2);
+        arrow2 = findViewById(R.id.arrow_button2);
+        hiddenView2 = findViewById(R.id.hidden_view2);
+        tvTitle2 = findViewById(R.id.tvTitle2);
+        tvSubtitle2 = findViewById(R.id.tvSubtitle2);
+        tvMyth2 = findViewById(R.id.tvMyth2);
 
         arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                expand(hiddenView, cardView, arrow);
+            }
+        });
 
-                // If the CardView is already expanded, set its visibility
-                //  to gone and change the expand less icon to expand more.
-                if (hiddenView.getVisibility() == View.VISIBLE) {
-
-                    // The transition of the hiddenView is carried out
-                    //  by the TransitionManager class.
-                    // Here we use an object of the AutoTransition
-                    // Class to create a default transition.
-                    TransitionManager.beginDelayedTransition(cardView,
-                            new AutoTransition());
-                    hiddenView.setVisibility(View.GONE);
-                    arrow.setImageResource(R.drawable.vd_expand_more);
-                }
-
-                // If the CardView is not expanded, set its visibility
-                // to visible and change the expand more icon to expand less.
-                else {
-
-                    TransitionManager.beginDelayedTransition(cardView,
-                            new AutoTransition());
-                    hiddenView.setVisibility(View.VISIBLE);
-                    arrow.setImageResource(R.drawable.vd_expand_less);
-                }
+        arrow2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                expand(hiddenView2, cardView2, arrow2);
             }
         });
 
         extractArticleValues();
 
+    }
+
+    private void expand(LinearLayout hiddenView, CardView cardView, ImageButton arrow) {
+        // If the CardView is already expanded, set its visibility
+        //  to gone and change the expand less icon to expand more.
+        if (hiddenView.getVisibility() == View.VISIBLE) {
+
+            // The transition of the hiddenView is carried out
+            //  by the TransitionManager class.
+            // Here we use an object of the AutoTransition
+            // Class to create a default transition.
+            TransitionManager.beginDelayedTransition(cardView,
+                    new Fade());
+            hiddenView.setVisibility(View.GONE);
+            arrow.setImageResource(R.drawable.vd_expand_more);
+        }
+
+        // If the CardView is not expanded, set its visibility
+        // to visible and change the expand more icon to expand less.
+        else {
+
+            TransitionManager.beginDelayedTransition(cardView,
+                    new AutoTransition());
+            hiddenView.setVisibility(View.VISIBLE);
+            arrow.setImageResource(R.drawable.vd_expand_less);
+        }
     }
 
     private void cleanViewAnyChartPattern() {
@@ -147,9 +178,12 @@ public class Article extends AppCompatActivity {
         tvTitle.setText(title1);
         tvSubtitle.setText(subtitle1);
         tvMyth.setText(myth1);
+        tvTitle2.setText(title2);
+        tvSubtitle2.setText(subtitle2);
+        tvMyth2.setText(myth2);
     }
 
-    //@SuppressLint("UseCompatLoadingForDrawables")
+    @SuppressLint("UseCompatLoadingForDrawables")
     private void extractArticleValues() {
         switch (name) {
             case "Zeus":
@@ -190,11 +224,14 @@ public class Article extends AppCompatActivity {
                 break;
             case "Hestia":
                 drawable = getResources().getDrawable(R.drawable.hestia_x);
-                resume = getString(R.string.eolo_resume);
+                resume = getString(R.string.hestia_resume);
                 url = "https://es.wikipedia.org/wiki/Hestia";
                 title1 = getString(R.string.hestia_myth1_title);
                 subtitle1 = getString(R.string.hestia_myth1_subtitle);
                 myth1 = getString(R.string.hestia_myth1_text);
+                title2 = getString(R.string.hestia_myth2_title);
+                subtitle2 = getString(R.string.hestia_myth2_subtitle);
+                myth2 = getString(R.string.hestia_myth2_text);
                 setArticleValues();
                 break;
             case "Demeter":
@@ -342,6 +379,7 @@ public class Article extends AppCompatActivity {
                 drawable = getResources().getDrawable(R.drawable.zeus_x);
                 break;
             default:
+                break;
         }
 
     }

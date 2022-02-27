@@ -3,12 +3,24 @@
     <string name="title_activity_main">Olympos</string>
     <string name="tab_text_1">Dioses</string>
     <string name="tab_text_2">Otros</string>
-    <string name="hestia_resume">Hija de Cronos y Rea.\nDiosa olímpica de la hoguera y del hogar (Simbolo: fuego).\nNo solía salir del Olimpo, no le interesaban las movidas de dioses o humanos, por ello se la conoce también como defensora de la paz.\nEncargada de dar armonia en el matrimonio y el hogar</string>
+    <!--HESTIA-->
+    <string name="hestia_resume">Hija de Cronos y Rea.\n
+        Diosa olímpica de la hoguera y del hogar (Simbolo: fuego).\n
+        No solía salir del Olimpo, no le interesaban las movidas de dioses o humanos, por ello se la conoce también como defensora de la paz.\n
+        Encargada de dar armonia en el matrimonio y el hogar.</string>
+
     <string name="hestia_myth1_title">La primera que nació, la primera a la que Cronos devoró</string>
     <string name="hestia_myth1_subtitle">Nacimiento y naturaleza</string>
-    <string name="hestia_myth1_text">Muycho texto</string>
-    <string name="hestia_myth2_title"></string>
-    <string name="hestia_myth2_subtitle"></string>
-    <string name="hestia_myth2_text"></string>
+    <string name="hestia_myth1_text">La primera hija de Cronos y Rea, fue la primera en ser devorada y la última a la que vomitó Cronos, la llaman "'"La más joven y la más mayor"'".\n\n
+        Trás la Titanomaquia Poseidón y Apolo fueron a pedirla matrimonio, pero enganchó a Zeus y delante de todos los dioses juró que permanecería siempre virgen.\n\n
+        Zeus, por este acto dictó, que en las fiestas el primer sacrificio siempre sería en su honor.</string>
+
+    <string name="hestia_myth2_title">Rea la invitó a una fiesta</string>
+    <string name="hestia_myth2_subtitle">Hestia y Príapo</string>
+    <string name="hestia_myth2_text">Rea organizó una fiesta a la que invitó a todos los Dioses, trás haber estado bebiendo se quedaron dormidos.\n\n
+        Príapo acechaba por ahí he intento tomar a Hestia mientras dormia, pero un asno rebuznó cuando se estaba avalanzando y ella consiguió escapar.\n\n
+        Se enfadó tanto que Príapo tuvo que huir del lugar porque Hestia pretendía destruirlo.\n\n
+        El asno se convirtió en su animal favorito y en las festividades se les engalanaba con guirnaldas.</string>
+    <!--EOLO-->
     <string name="eolo_resume">Eolo Resume</string>
 </resources>

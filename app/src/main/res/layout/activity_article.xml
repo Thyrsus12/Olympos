@@ -6,268 +6,283 @@
     android:layout_height="match_parent"
     tools:context=".Article">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:paddingTop="110dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/olympus" />
 
-        <!--RESUME TEXTVIEW-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tvResume"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="Este personaje aún no tiene contendio" />
-
-            <TextView
-                android:id="@+id/tvMoreInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="24dp"
-                android:text="Más información" />
-
-        </LinearLayout>
-
-        <!--Base CardView-->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/base_cardview"
-            style="@style/Base.CardView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.021">
+            app:layout_constraintTop_toTopOf="parent">
 
-            <!--This is a ConstraintLayout for the entire CardView
-                       including the expandable portion-->
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:paddingTop="110dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/olympus" />
+
+            <!--RESUME TEXTVIEW-->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/base_cardview"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.511"
-                tools:layout_editor_absoluteX="-55dp">
-
-                <!--This is a ConstraintLayout for the fixed portion
-                    of the CardView. The elements
-                    that lie within the fixed portion of the CardView
-                    can be constrained to this layout.-->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/fixed_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0">
-
-
-                    <TextView
-                        android:id="@+id/tvTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="XXXX"
-                        android:textSize="20dp"
-                        android:textAlignment="center"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/fixed_layout"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/fixed_layout"
-                        app:layout_constraintVertical_bias="0.198" />
-
-                    <!--This is ImageButton for the expansion icon.-->
-                    <TextView
-                        android:id="@+id/tvSubtitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="58dp"
-                        android:text="XXXXX"
-                        android:textSize="15dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/fixed_layout"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-                        app:layout_constraintVertical_bias="0.0" />
-
-                    <ImageButton
-                        android:id="@+id/arrow_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="16dp"
-                        android:backgroundTint="@color/white"
-                        android:src="@drawable/vd_expand_more"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <!--The following is the expandable portion whose
-                    visibility is initially set to 'gone'.
-                    The parent LinearLayout contains 3 child LinearLayouts
-                    that hold a subject name and an icon each.-->
-                <LinearLayout
-                    android:id="@+id/hidden_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/fixed_layout">
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tvMyth"
-                    android:layout_width="match_parent"
+                    android:id="@+id/tvResume"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pero que hacemos con un calamorro de estos" />
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Resumen" />
+
+                <TextView
+                    android:id="@+id/tvMoreInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Más información" />
 
             </LinearLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!--Base CardView-->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/base_cardview2"
-            style="@style/Base.CardView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.473"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.021">
-
-            <!--This is a ConstraintLayout for the entire CardView
-                       including the expandable portion-->
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <!--Base CardView-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/base_cardview"
+                style="@style/Base.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/base_cardview"
+                android:layout_margin="10dp"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.473"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.511"
-                tools:layout_editor_absoluteX="-55dp">
+                app:layout_constraintVertical_bias="0.021">
 
-                <!--This is a ConstraintLayout for the fixed portion
-                    of the CardView. The elements
-                    that lie within the fixed portion of the CardView
-                    can be constrained to this layout.-->
+                <!--This is a ConstraintLayout for the entire CardView
+                           including the expandable portion-->
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/fixed_layout2"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0">
-
-
-                    <TextView
-                        android:id="@+id/heading2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="XXXX"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/fixed_layout2"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/fixed_layout2"
-                        app:layout_constraintVertical_bias="0.198" />
-
-                    <!--This is ImageButton for the expansion icon.-->
-                    <TextView
-                        android:id="@+id/list_of_subjects2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="58dp"
-                        android:text="XXXX"
-                        android:textSize="15dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/fixed_layout2"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/heading2"
-                        app:layout_constraintVertical_bias="0.0" />
-
-                    <ImageButton
-                        android:id="@+id/arrow_button2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="16dp"
-                        android:backgroundTint="@color/white"
-                        android:src="@drawable/vd_expand_more"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <!--The following is the expandable portion whose
-                    visibility is initially set to 'gone'.
-                    The parent LinearLayout contains 3 child LinearLayouts
-                    that hold a subject name and an icon each.-->
-                <LinearLayout
-                    android:id="@+id/hidden_view2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/fixed_layout2">
+                    app:layout_constraintBottom_toBottomOf="@+id/base_cardview"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.511"
+                    tools:layout_editor_absoluteX="-55dp">
 
-                    <TextView
-                        android:id="@+id/tvMyth2"
+                    <!--This is a ConstraintLayout for the fixed portion
+                        of the CardView. The elements
+                        that lie within the fixed portion of the CardView
+                        can be constrained to this layout.-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/fixed_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <TextView
+                            android:id="@+id/tvTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Titulo"
+                            android:textAlignment="center"
+                            android:textSize="20dp"
+                            android:textColor="@color/blue_700"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/fixed_layout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/fixed_layout"
+                            app:layout_constraintVertical_bias="0.198" />
+
+                        <!--This is ImageButton for the expansion icon.-->
+                        <TextView
+                            android:id="@+id/tvSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="58dp"
+                            android:text="Subtitulo"
+                            android:textSize="15dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/fixed_layout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <ImageButton
+                            android:id="@+id/arrow_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:backgroundTint="@color/white"
+                            android:src="@drawable/vd_expand_more"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="1.0" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--The following is the expandable portion whose
+                        visibility is initially set to 'gone'.
+                        The parent LinearLayout contains 3 child LinearLayouts
+                        that hold a subject name and an icon each.-->
+                    <LinearLayout
+                        android:id="@+id/hidden_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Pero que hacemos con un calamorro de estos" />
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fixed_layout">
 
-                </LinearLayout>
+                        <TextView
+                            android:id="@+id/tvMyth"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="Mito" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
 
-    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--Base CardView-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/base_cardview2"
+                style="@style/Base.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.473"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.021">
+
+                <!--This is a ConstraintLayout for the entire CardView
+                           including the expandable portion-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/base_cardview"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.511"
+                    tools:layout_editor_absoluteX="-55dp">
+
+                    <!--This is a ConstraintLayout for the fixed portion
+                        of the CardView. The elements
+                        that lie within the fixed portion of the CardView
+                        can be constrained to this layout.-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/fixed_layout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
+
+
+                        <TextView
+                            android:id="@+id/tvTitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Titulo"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/blue_700"
+                            app:layout_constraintBottom_toBottomOf="@+id/fixed_layout2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/fixed_layout2"
+                            app:layout_constraintVertical_bias="0.198" />
+
+                        <!--This is ImageButton for the expansion icon.-->
+                        <TextView
+                            android:id="@+id/tvSubtitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="58dp"
+                            android:text="Subtítulo"
+                            android:textSize="15dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/fixed_layout2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTitle2"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <ImageButton
+                            android:id="@+id/arrow_button2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:backgroundTint="@color/white"
+                            android:src="@drawable/vd_expand_more"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="1.0" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--The following is the expandable portion whose
+                        visibility is initially set to 'gone'.
+                        The parent LinearLayout contains 3 child LinearLayouts
+                        that hold a subject name and an icon each.-->
+                    <LinearLayout
+                        android:id="@+id/hidden_view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fixed_layout2">
+
+                        <TextView
+                            android:id="@+id/tvMyth2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="Mito" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
