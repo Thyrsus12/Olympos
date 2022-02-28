@@ -28,52 +28,48 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class Article extends AppCompatActivity {
 
+    //Bundle propierties
+    String name;
+
     //Gerneral propierties
     Context context;
     ImageView imageView;
     TextView tvResume;
 
-    //Especific propierties
+    //Specific propierties (initialized in extractArticleValues())
     Drawable drawable;
-    String resume, url, title1, subtitle1, myth1, title2, subtitle2, myth2;
-
-    //Bundle propierties
-    String name;
-
-    //AlertDialog
-    View alertView;
+    String resume, url;
 
     //Expandable CardView1
+    String title1, subtitle1, myth1;
     ImageButton arrow;
     LinearLayout hiddenView;
     CardView cardView;
     TextView tvTitle, tvSubtitle, tvMyth;
     //Expandable CardView2
+    String title2, subtitle2, myth2;
     ImageButton arrow2;
     LinearLayout hiddenView2;
     CardView cardView2;
     TextView tvTitle2, tvSubtitle2, tvMyth2;
+
+    //AlertDialog
+    View alertView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article);
 
+        //Bundle propierties
+        Bundle bundle = getIntent().getExtras();
+        name = bundle.getString("name");
+
         //Gerneral propierties
         context = this;
         imageView = findViewById(R.id.imageView);
         tvResume = findViewById(R.id.tvResume);
         TextView tvMoreInfo = findViewById(R.id.tvMoreInfo);
-
-        //Especific propierties
-        url = "https://es.wikipedia.org/wiki/Zeus";
-
-        //Bundle propierties
-        Bundle bundle = getIntent().getExtras();
-        name = bundle.getString("name");
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(Html.fromHtml("<font>" + name + "</font>"));
 
         //Expandable CardView1
         cardView = findViewById(R.id.base_cardview);
@@ -89,10 +85,13 @@ public class Article extends AppCompatActivity {
         tvTitle2 = findViewById(R.id.tvTitle2);
         tvSubtitle2 = findViewById(R.id.tvSubtitle2);
         tvMyth2 = findViewById(R.id.tvMyth2);
+        
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(Html.fromHtml("<font>" + name + "</font>"));
 
         extractArticleValues();
 
-        //AlertDialog that show big image
+        //---AlertDialog that show big image---
         alertView = getLayoutInflater().inflate(R.layout.alert_dialog_image, null);
         ImageView imageViewAlert = alertView.findViewById(R.id.imageViewAlert);
         imageViewAlert.setImageDrawable(drawable);
@@ -107,6 +106,7 @@ public class Article extends AppCompatActivity {
                 dialog.show();
             }
         });
+        //------
 
         //TextView that open Wiki
         tvMoreInfo.setOnClickListener(view -> {
@@ -118,27 +118,26 @@ public class Article extends AppCompatActivity {
         arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                expand(hiddenView, cardView, arrow);
+                expandMythCardView(hiddenView, cardView, arrow);
             }
         });
 
         arrow2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                expand(hiddenView2, cardView2, arrow2);
+                expandMythCardView(hiddenView2, cardView2, arrow2);
             }
         });
 
     }
+    
+    private void expandMythCardView(LinearLayout hiddenView, CardView cardView, ImageButton arrow) {
 
-    private void expand(LinearLayout hiddenView, CardView cardView, ImageButton arrow) {
         // If the CardView is already expanded, set its visibility
         //  to gone and change the expand less icon to expand more.
         if (hiddenView.getVisibility() == View.VISIBLE) {
-
             // The transition of the hiddenView is carried out
-            //  by the TransitionManager class.
-            // Here we use an object of the AutoTransition
+            //  by the TransitionManager class (Transition: Fade()).
             // Class to create a default transition.
             TransitionManager.beginDelayedTransition(cardView,
                     new Fade());
@@ -149,7 +148,6 @@ public class Article extends AppCompatActivity {
         // If the CardView is not expanded, set its visibility
         // to visible and change the expand more icon to expand less.
         else {
-
             TransitionManager.beginDelayedTransition(cardView,
                     new AutoTransition());
             hiddenView.setVisibility(View.VISIBLE);
