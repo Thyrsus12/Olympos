@@ -83,9 +83,9 @@ public class GodsFragment extends Fragment {
     private void fillGodsArray() {
         gods.add(new Being(getResources().getDrawable(R.drawable.zeus_x), "Zeus"));
         gods.add(new Being(getResources().getDrawable(R.drawable.hades_x), "Hades"));
-        gods.add(new Being(getResources().getDrawable(R.drawable.poseidon_x), "Poseidón"));
-        gods.add(new Being(getResources().getDrawable(R.drawable.hera_x), "Hera"));
         gods.add(new Being(getResources().getDrawable(R.drawable.hestia_x), "Hestia"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.hera_x), "Hera"));
+        gods.add(new Being(getResources().getDrawable(R.drawable.poseidon_x), "Poseidón"));
         gods.add(new Being(getResources().getDrawable(R.drawable.demeter_x), "Demeter"));
         gods.add(new Being(getResources().getDrawable(R.drawable.aphrodite_x), "Afrodita"));
         gods.add(new Being(getResources().getDrawable(R.drawable.apollo_x), "Apolo"));
