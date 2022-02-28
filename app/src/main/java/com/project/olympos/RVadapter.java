@@ -25,9 +25,7 @@ public class RVadapter extends RecyclerView.Adapter<RVadapter.ViewHolder> {
         this.context = context;
         this.fragmentGods = fragment;
         aviliable.add("Zeus");
-        aviliable.add("Hades");
         aviliable.add("Hestia");
-        aviliable.add("Eolo");
     }
 
     public RVadapter(ArrayList<Being> characters, Context context, OthersFragment fragment) {

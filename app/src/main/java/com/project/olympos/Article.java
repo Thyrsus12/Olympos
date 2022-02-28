@@ -184,40 +184,29 @@ public class Article extends AppCompatActivity {
     @SuppressLint("UseCompatLoadingForDrawables")
     private void extractArticleValues() {
         switch (name) {
+            /*-----GODS-----*/
             case "Zeus":
                 drawable = getResources().getDrawable(R.drawable.zeus_x);
-                resume = getString(R.string.eolo_resume);
+                resume = getString(R.string.zeus_resume);
                 url = "https://es.wikipedia.org/wiki/Zeus";
-                /*title1 = getString(R.string.hestia_myth1_title);
-                subtitle1 = getString(R.string.hestia_myth1_subtitle);
-                myth1 = getString(R.string.hestia_myth1_text);*/
+                title1 = getString(R.string.zeus_myth1_title);
+                subtitle1 = getString(R.string.zeus_myth1_subtitle);
+                myth1 = getString(R.string.zeus_myth1_text);
+                title2 = getString(R.string.zeus_myth2_title);
+                subtitle2 = getString(R.string.zeus_myth2_subtitle);
+                myth2 = getString(R.string.zeus_myth2_text);
                 setArticleValues();
                 break;
             case "Hades":
                 drawable = getResources().getDrawable(R.drawable.hades_x);
-                resume = getString(R.string.eolo_resume);
+                resume = getString(R.string.hades_resume);
                 url = "https://es.wikipedia.org/wiki/Hades";
-                /*title1 = getString(R.string.hestia_myth1_title);
-                subtitle1 = getString(R.string.hestia_myth1_subtitle);
-                myth1 = getString(R.string.hestia_myth1_text);*/
-                setArticleValues();
-                break;
-            case "Poseidón":
-                drawable = getResources().getDrawable(R.drawable.poseidon_x);
-                resume = getString(R.string.eolo_resume);
-                url = "https://es.wikipedia.org/wiki/Poseidón";
-                /*title1 = getString(R.string.hestia_myth1_title);
-                subtitle1 = getString(R.string.hestia_myth1_subtitle);
-                myth1 = getString(R.string.hestia_myth1_text);*/
-                setArticleValues();
-                break;
-            case "Hera":
-                drawable = getResources().getDrawable(R.drawable.hera_x);
-                resume = getString(R.string.eolo_resume);
-                url = "https://es.wikipedia.org/wiki/Hera";
-                /*title1 = getString(R.string.hestia_myth1_title);
-                subtitle1 = getString(R.string.hestia_myth1_subtitle);
-                myth1 = getString(R.string.hestia_myth1_text);*/
+                title1 = getString(R.string.hades_myth1_title);
+                subtitle1 = getString(R.string.hades_myth1_subtitle);
+                myth1 = getString(R.string.hades_myth1_text);
+                title2 = getString(R.string.hades_myth2_title);
+                subtitle2 = getString(R.string.hades_myth2_subtitle);
+                myth2 = getString(R.string.hades_myth2_text);
                 setArticleValues();
                 break;
             case "Hestia":
@@ -232,149 +221,114 @@ public class Article extends AppCompatActivity {
                 myth2 = getString(R.string.hestia_myth2_text);
                 setArticleValues();
                 break;
+            case "Hera":
+                imageView.setImageDrawable(getResources().getDrawable(R.drawable.hera_x));
+                drawable = getResources().getDrawable(R.drawable.hera_x);
+                break;
+            case "Poseidón":
+                imageView.setImageDrawable(getResources().getDrawable(R.drawable.poseidon_x));
+                drawable = getResources().getDrawable(R.drawable.poseidon_x);
+                break;
             case "Demeter":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.demeter_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.demeter_x);
                 break;
             case "Afrodita":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.aphrodite_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.aphrodite_x);
                 break;
             case "Apolo":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.apollo_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.apollo_x);
                 break;
             case "Ares":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.ares_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.ares_x);
                 break;
             case "Artemisa":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.artemis_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.artemis_x);
                 break;
             case "Atenea":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.athenea_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.athenea_x);
                 break;
             case "Dioniso":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.dionysus_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.dionysus_x);
                 break;
             case "Helios":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.helios_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.helios_x);
                 break;
             case "Hefesto":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.hephaestus_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.hephaestus_x);
                 break;
             case "Hermes":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.hermes_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.hermes_x);
                 break;
             case "Anfitrite":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.amphitrite_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.amphitrite_x);
                 break;
             case "Eos":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.eos_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.eos_x);
                 break;
             case "Eris":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.eris_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.eris_x);
                 break;
             case "Eros":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.eros_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.eros_x);
                 break;
             case "Hebe":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.hebe_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.hebe_x);
                 break;
             case "Iris":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.iris_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.iris_x);
                 break;
             case "Perséfone":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.persephone_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.persephone_x);
                 break;
             case "Morfeo":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.morpheus_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.morpheus_x);
                 break;
             case "Nike":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.nike_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.nike_x);
                 break;
             case "Kione":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.khione_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.khione_x);
                 break;
             case "Melinoe":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.melinoe_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.melinoe_x);
                 break;
             case "Selene":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.selene_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.selene_x);
                 break;
             case "Nemesis":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.nemesis_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.nemesis_x);
                 break;
             case "Tyche":
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.tyche_x));
-                tvResume.setText(getString(R.string.eolo_resume));
-                url = "https://es.wikipedia.org/wiki/Zeus";
-                drawable = getResources().getDrawable(R.drawable.zeus_x);
+                drawable = getResources().getDrawable(R.drawable.tyche_x);
+                break;
+                /*-----OTHERS-----*/
+            case "Eolo":
+                imageView.setImageDrawable(getResources().getDrawable(R.drawable.aeolus_x));
+                drawable = getResources().getDrawable(R.drawable.aeolus_x);
                 break;
             default:
                 break;

@@ -3,6 +3,32 @@
     <string name="title_activity_main">Olympos</string>
     <string name="tab_text_1">Dioses</string>
     <string name="tab_text_2">Otros</string>
+    <!--ZEUS-->
+    <string name="zeus_resume">Hijo de Cronos y Rea.\n
+        Dios del cielo, el trueno y la energía, llamado "'"Padre de los dioses y los hombres"'" (Simbolos: cetro, corona, rayo, águila...).\n
+        Esposo de Hera, conocido por sus aventuras y amantes de las que surgieron muchos dioses y héroes como: Apolo, Artemisa, Perséfone, las Musas, ninfas...</string>
+
+    <string name="zeus_myth1_title">Nace en Creta el dios más sensual</string>
+    <string name="zeus_myth1_subtitle">Nacimiento e Infancia</string>
+    <string name="zeus_myth1_text">El último hijo de Cronos y Rea. Antes de dar a luz, Rea, se escondió en la Isla de Creta para evitar que Cronos se comíera a Zeus, pretendiendo evitar la profecía de Urano (uno de sus hijos le destronaría). Trás el nacimiento Rea le dió a Cronos una piedra envuelta en pañales que se comió sin desconfiar.\n\n
+        Zeus se crió en una cueva con una cabra (Amaltea) que lo amamantaba, y los Curetes hacian bailes con escudos y lanzas para evitar que Cronos oyera sus llantos.</string>
+
+    <string name="zeus_myth2_title">Se entrena con la idea de a Cronos derrotar</string>
+    <string name="zeus_myth2_subtitle">Zeus: rey de los dioses</string>
+    <string name="zeus_myth2_text">Tras hacerse adulto, Zeus le dió a su padre una poción (preparada por Metis) y vomitó a sus hijos en orden inverso a como se los había comido.\n\n
+        Después liberó del Tártaro a los Cíclopes, que como agradecimiento le regalaron el rayo. Empezó la Titanomaquia en la que los Dioses derrotaron a los Titatnes y los dejaron encerrados en el Tártaro, menos Atlas que fue castiGado sosteniendo la bóveda celeste.</string>
+
+    <!--HADES-->
+    <string name="hades_resume">Hijo de Cronos y Rea.\n</string>
+
+    <string name="hades_myth1_title"></string>
+    <string name="hades_myth1_subtitle"></string>
+    <string name="hades_myth1_text"></string>
+
+    <string name="hades_myth2_title"></string>
+    <string name="hades_myth2_subtitle"></string>
+    <string name="hades_myth2_text"></string>
+
     <!--HESTIA-->
     <string name="hestia_resume">Hija de Cronos y Rea.\n
         Diosa olímpica de la hoguera y del hogar (Simbolo: fuego).\n
@@ -21,6 +47,4 @@
         Príapo acechaba por ahí he intento tomar a Hestia mientras dormia, pero un asno rebuznó cuando se estaba avalanzando y ella consiguió escapar.\n\n
         Se enfadó tanto que Príapo tuvo que huir del lugar porque Hestia pretendía destruirlo.\n\n
         El asno se convirtió en su animal favorito y en las festividades se les engalanaba con guirnaldas.</string>
-    <!--EOLO-->
-    <string name="eolo_resume">Eolo Resume</string>
 </resources>
