@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="15dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="Develop_GH: @Thyrsus12\nArtist_IG: @yliade.art"
             android:visibility="gone" />
     </LinearLayout>

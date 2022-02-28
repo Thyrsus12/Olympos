@@ -52,6 +52,7 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="24dp"
+                    android:textColor="@color/blue_700"
                     android:text="Más información" />
 
             </LinearLayout>
