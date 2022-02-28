@@ -72,7 +72,7 @@ public class GodsFragment extends Fragment {
         gods = new ArrayList<>();
         recyclerGods = vista.findViewById(R.id.rvGods);
         recyclerGods.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        RVgodsAdapter adaptador = new RVgodsAdapter(gods, getContext(), this);
+        RVadapter adaptador = new RVadapter(gods, getContext(), this);
         recyclerGods.setAdapter(adaptador);
 
         fillGodsArray();

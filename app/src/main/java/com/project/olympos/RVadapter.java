@@ -13,41 +13,59 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RVothersAdapter extends RecyclerView.Adapter<RVothersAdapter.ViewHolder> {
+public class RVadapter extends RecyclerView.Adapter<RVadapter.ViewHolder> {
     private ArrayList<Being> characters;
     private Context context;
-    private OthersFragment fragment;
+    private GodsFragment fragmentGods;
+    private OthersFragment fragmentOthers;
     ArrayList<String> aviliable = new ArrayList<>();
 
-    public RVothersAdapter (ArrayList<Being> characters, Context context, OthersFragment fragment) {
+    public RVadapter(ArrayList<Being> characters, Context context, GodsFragment fragment) {
         this.characters = characters;
         this.context = context;
-        this.fragment = fragment;
+        this.fragmentGods = fragment;
+        aviliable.add("Hestia");
+        aviliable.add("Zeus");
+        aviliable.add("Eolo");
+    }
+
+    public RVadapter(ArrayList<Being> characters, Context context, OthersFragment fragment) {
+        this.characters = characters;
+        this.context = context;
+        this.fragmentOthers = fragment;
+        aviliable.add("Hestia");
+        aviliable.add("Zeus");
+        aviliable.add("Eolo");
     }
 
     @NonNull
     @Override
-    public RVothersAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RVadapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card, parent, false);
-        return new RVothersAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RVothersAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RVadapter.ViewHolder holder, int position) {
         String name = characters.get(position).getName();
         holder.imageView.setImageDrawable(characters.get(position).getImage());
         holder.textView.setText(name);
 
         //OPEN NOTE RELATED ARTICLE
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (aviliable.contains(name))
-                    fragment.openArticle(name);
-                else
-                    Toast.makeText(context, "Este personaje aún no está disponible", Toast.LENGTH_SHORT).show();
+                    if (fragmentGods != null)
+                        fragmentGods.openArticle(name);
+                    else
+                        fragmentOthers.openArticle(name);
+                    else
+                        Toast.makeText(context, "Este personaje aún no está disponible", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     @Override

@@ -1,14 +1,12 @@
 package com.project.olympos;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,7 +72,7 @@ public class OthersFragment extends Fragment {
         others = new ArrayList<>();
         recyclerOthers = vista.findViewById(R.id.rvGods);
         recyclerOthers.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        RVothersAdapter adaptador = new RVothersAdapter(others, getContext(), this);
+        RVadapter adaptador = new RVadapter(others, getContext(), this);
         recyclerOthers.setAdapter(adaptador);
 
         fillGodsArray();

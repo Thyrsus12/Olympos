@@ -75,29 +75,6 @@ public class Article extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(Html.fromHtml("<font>" + name + "</font>"));
 
-        //AlertDialog that show big image
-        alertView = getLayoutInflater().inflate(R.layout.alert_dialog_image, null);
-        ImageView imageViewAlert = alertView.findViewById(R.id.imageViewAlert);
-        imageViewAlert.setImageDrawable(drawable);
-
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cleanViewAnyChartPattern();
-                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-                builder.setView(alertView);
-                AlertDialog dialog = builder.create();
-                dialog.show();
-            }
-        });
-
-        //TextView that open Wiki
-        tvMoreInfo.setOnClickListener(view -> {
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(url));
-            startActivity(intent);
-        });
-
         //Expandable CardView1
         cardView = findViewById(R.id.base_cardview);
         arrow = findViewById(R.id.arrow_button);
@@ -113,6 +90,31 @@ public class Article extends AppCompatActivity {
         tvSubtitle2 = findViewById(R.id.tvSubtitle2);
         tvMyth2 = findViewById(R.id.tvMyth2);
 
+        extractArticleValues();
+
+        //AlertDialog that show big image
+        alertView = getLayoutInflater().inflate(R.layout.alert_dialog_image, null);
+        ImageView imageViewAlert = alertView.findViewById(R.id.imageViewAlert);
+        imageViewAlert.setImageDrawable(drawable);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //cleanViewAnyChartPattern();
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+                builder.setView(alertView);
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
+
+        //TextView that open Wiki
+        tvMoreInfo.setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(url));
+            startActivity(intent);
+        });
+
         arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -126,8 +128,6 @@ public class Article extends AppCompatActivity {
                 expand(hiddenView2, cardView2, arrow2);
             }
         });
-
-        extractArticleValues();
 
     }
 
@@ -166,7 +166,7 @@ public class Article extends AppCompatActivity {
             }
         }
         try {
-            alertView = getLayoutInflater().inflate(R.layout.alert_dialog_image, null);
+            alertView = getLayoutInflater().inflate(R.layout.alert_dialog_image, (ViewGroup) alertView.getParent());
         } catch (InflateException e) {
             e.printStackTrace();
         }
