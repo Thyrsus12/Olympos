@@ -68,16 +68,16 @@ public class GodsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_gods, container, false);
-        View vista = inflater.inflate(R.layout.fragment_gods, container, false);
+        View view = inflater.inflate(R.layout.fragment_gods, container, false);
         gods = new ArrayList<>();
-        recyclerGods = vista.findViewById(R.id.rvGods);
+        recyclerGods = view.findViewById(R.id.rvGods);
         recyclerGods.setLayoutManager(new GridLayoutManager(getContext(), 2));
         RVadapter adaptador = new RVadapter(gods, getContext(), this);
         recyclerGods.setAdapter(adaptador);
 
         fillGodsArray();
 
-        return vista;
+        return view;
     }
 
     private void fillGodsArray() {
