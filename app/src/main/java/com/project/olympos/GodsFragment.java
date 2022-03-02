@@ -1,5 +1,6 @@
 package com.project.olympos;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -80,6 +81,7 @@ public class GodsFragment extends Fragment {
         return view;
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private void fillGodsArray() {
         gods.add(new Being(getResources().getDrawable(R.drawable.zeus_x), "Zeus"));
         gods.add(new Being(getResources().getDrawable(R.drawable.hades_x), "Hades"));
@@ -110,7 +112,6 @@ public class GodsFragment extends Fragment {
         gods.add(new Being(getResources().getDrawable(R.drawable.selene_x), "Selene"));
         gods.add(new Being(getResources().getDrawable(R.drawable.nemesis_x), "Nemesis"));
         gods.add(new Being(getResources().getDrawable(R.drawable.tyche_x), "Tyche"));
-
     }
 
     public void openArticle(String name) {

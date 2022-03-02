@@ -22,7 +22,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|top"
-        android:background="@color/blue_700"
         android:orientation="horizontal">
 
         <ImageView
@@ -35,7 +34,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textSize="15dp"
+            android:textSize="18dp"
+            android:background="@color/blue_700"
             android:textColor="@color/white"
             android:text="Develop_GH: @Thyrsus12\nArtist_IG: @yliade.art"
             android:visibility="gone" />

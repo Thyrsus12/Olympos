@@ -75,12 +75,12 @@ public class OthersFragment extends Fragment {
         RVadapter adaptador = new RVadapter(others, getContext(), this);
         recyclerOthers.setAdapter(adaptador);
 
-        fillGodsArray();
+        fillOthersArray();
 
         return vista;
     }
 
-    private void fillGodsArray() {
+    private void fillOthersArray() {
         others.add(new Being(getResources().getDrawable(R.drawable.aeolus_x), "Eolo"));
         others.add(new Being(getResources().getDrawable(R.drawable.asteria_x), "Asteria"));
         others.add(new Being(getResources().getDrawable(R.drawable.chaos_x), "Caos"));
@@ -103,7 +103,6 @@ public class OthersFragment extends Fragment {
         others.add(new Being(getResources().getDrawable(R.drawable.styx_x), "Estigia"));
         others.add(new Being(getResources().getDrawable(R.drawable.pythia_x), "Pítia"));
         others.add(new Being(getResources().getDrawable(R.drawable.urano_x), "Urano"));
-
     }
 
     public void openArticle(String name) {
