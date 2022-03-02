@@ -3,8 +3,8 @@
     <color name="blue_200">#0DD9B3</color>
     <color name="blue_500">#03A688</color>
     <color name="blue_700">#025E73</color>
-    <color name="green_200">#0DF205</color>
-    <color name="green_700">#0d8505</color>
+    <color name="brown_200">#E39A59</color>
+    <color name="brown_700">#A15E23</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
