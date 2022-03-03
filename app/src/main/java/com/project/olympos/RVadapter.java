@@ -34,7 +34,6 @@ public class RVadapter extends RecyclerView.Adapter<RVadapter.ViewHolder> {
         this.fragmentOthers = fragment;
         aviliable.add("Hestia");
         aviliable.add("Zeus");
-        aviliable.add("Eolo");
     }
 
     @NonNull
